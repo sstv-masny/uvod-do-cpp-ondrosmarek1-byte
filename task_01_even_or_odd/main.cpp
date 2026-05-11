@@ -5,6 +5,10 @@ int main() {
     std::cin.tie(nullptr);
     long long n;
     if (!(std::cin >> n)) return 0;
-    // TODO: print "even" or "odd"
+    if (n % 2 == 0) {       //testujeme delitelnost 2
+        std::cout << "Even\n";
+    } else {
+        std::cout << "Odd\n";
+    }
     return 0;
 }

@@ -5,6 +5,10 @@ int main() {
     std::cin.tie(nullptr);
     long long y;
     if (!(std::cin >> y)) return 0;
-    // TODO: implement leap rule and print YES/NO
+    if ((y % 4 == 0 && y % 100 != 0) || (y % 400 == 0)) { //testujeme delitelnost aby bol rok prestupny
+        std::cout << "Leap\n";
+    } else {
+        std::cout << "Not leap\n";
+    }
     return 0;
 }

@@ -1,0 +1,7 @@
+# .clang-format
+BasedOnStyle: LLVM
+BreakBeforeBraces: Attach   # puts { on the same line for functions, classes, if/for/while, etc.
+# Optional tweaks:
+AllowShortFunctionsOnASingleLine: Empty
+IndentWidth: 4
+ColumnLimit: 0

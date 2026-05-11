@@ -1,0 +1,37 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C++ (MinGW, gdb): F5",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}\\build\\app.exe",
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb.exe", // ← set to your actual gdb.exe
+      // ─────────────── args explained ───────────────
+      // "args": [
+      // Each item = ONE CLI token, exactly like argv[i].
+      // Example program usage:
+      //   ./app <name> --count 3 --title "Hello World"
+      // "Alice", // argv[1]  ← first positional argument
+      // "--count",
+      // "3", // argv[2], argv[3] ← flag + its value (separate items)
+      // "--title",
+      // "Hello World", // spaces are fine: keep as one array item
+      // Alternative forms:
+      // "--count=3",       // single token works too, many parsers accept it
+      // "--flag"           // boolean/toggle flag (no value)
+      // ],
+      "args": [],
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "preLaunchTask": "build-mingw",
+      "setupCommands": [
+        {
+          "text": "-enable-pretty-printing"
+        }
+      ]
+    }
+  ]
+}

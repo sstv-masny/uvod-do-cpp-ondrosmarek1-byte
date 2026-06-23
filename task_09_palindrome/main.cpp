@@ -1,27 +1,31 @@
-
-#include <cctype>
 #include <iostream>
-#include <string>
+#include <vector>
 int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
-    std::string s;
-    if (!std::getline(std::cin, s))
+    int n;
+    if (!(std::cin >> n))
         return 0;
-    return 0;
-    std::string rs;
-    std::string cs = "";
-    for (int i = 0; i < s.length(); i++) {
-        s[i] = std::tolower[s[i]];
+    std::vector<long long> a(n);
+    for (int i = 0; i < n; i++)
+        std::cin >> a[i];
+    long long x;
+    std::cin >> x;
+    int najv = n - 1, najn = 0;
+    int mid = a.size() / 2;
+    int location = -1;
+    while (najn <= najv) {
+        mid = (najv + najn) / 2;
+        if (a[mid] < x) {
+            najn = mid + 1;
+        } else if (a[mid] > x) {
+            najv = mid - 1;
+        } else if (a[mid] == x) {
+            location = mid;
+            najv = mid - 1;
+        }
     }
 
-    for (int i = 0; i < s.length(); i++) {
-        if (s[i] >= 'a' && s[i] <= 'z') {
-            cs = cs + s[i];
-        }
-        for (int i = cs.size() - 1; i >= 0; i--) {
-            rs = rs + cs[i];
-        }
-        std::cout << (cs == rs ? "YES" : "NO");
-    }
+    std::cout << location;
+    return 0;
 }
